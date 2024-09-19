@@ -3,24 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>menu 3</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="navbar">
       <h1>Dashboard</h1>
-      <ul>
+      <ul class="menu">
         <li><a href="dashboard.html">Home</a></li>
         <li><a href="menu1.html">Menu 1</a></li>
         <li><a href="menu2.html">Menu 2</a></li>
         <li><a href="menu3.html">Menu 3</a></li>
-        <li><a href="index.html" onclick="logout()">Logout</a></li>
       </ul>
+
+      <a href="index.html" class="logout" onclick="logout()">Logout</a>
     </div>
 
     <div class="content">
-      <h2></h2>
-      <p></p>
+      <h2>Welcome to the Dashboard</h2>
+      <p>This is your main panel where you can access various menu items.</p>
     </div>
 
     <script src="script.js"></script>
