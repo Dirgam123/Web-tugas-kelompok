@@ -12,7 +12,7 @@ if(isset($_SESSION["is_login"])){
 if(isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $hash_password = hash("sha256", $password);
+    $hash_password = hash('sha256', $password);
 
     try {
 
