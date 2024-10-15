@@ -16,62 +16,14 @@
   <title>
    Energix
   </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <style>
-   body {
-            font-family: 'Roboto', sans-serif;
-        }
-  </style>
 </head>
-<body class="container">
-    <h3>Selamat Datang di Smart City, <?= $_SESSION["username"] ?></h3>
-    
-    <form action="dashboard.php" method="POST">
-        <button type="submit" name="logout">logout</button>
-    </form>
-
+<body>
+      <?php include "layout/headerlogin.html" ?>
 </body>
+
 <body class="bg-white text-gray-800">
   <header class="bg-blue-900 text-white">
-   <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <div class="flex items-center">
-     <img alt="Energix Logo" class="mr-3" height="50" src="https://storage.googleapis.com/a1aa/image/0t2oYi0pu3KXOFA4rhIIL2xesp51RO1sOdjip1l8PCiEN3yJA.jpg" width="50"/>
-     <span class="text-xl font-bold">
-      ENERGIX
-     </span>
-    </div>
-    <nav class="flex space-x-4">
-     <a class="hover:text-green-500" href="dashboard.php">
-      Home
-     </a>
-     <a class="hover:text-green-500" href="energymanagement.php">
-      Energy Management
-     </a>
-     <a class="hover:text-green-500" href="community.php">
-      Community
-     </a>
-     <a class="hover:text-green-500" href="profile.php">
-      Profile
-     </a>
-
-    </nav>
-    <div class="flex items-center space-x-4">
-
-     <a class="bg-red-500 text-white px-4 py-2 rounded" href="register.php">
-      Register
-     </a>
-          </a>
-     <a class="bg-green-500 text-white px-4 py-2 rounded" href="login.php">
-      Login
-     </a>
-    </div>
-   </div>
   </header>
   <section class="bg-blue-900 text-white text-center py-20">
    <div class="container mx-auto">
@@ -81,9 +33,7 @@
     <p class="mb-8">
      Reliable and affordable energy solutions for a sustainable future.
     </p>
-    <a class="bg-orange-500 text-white px-6 py-3 rounded" href="#">
-     Learn More
-    </a>
+
    </div>
   </section>
   <section class="py-20">
