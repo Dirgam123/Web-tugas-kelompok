@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="login-container">
         <?php include "layout/header.html" ?>
     <main>
     <h3>Welcome to Smart City</h3>
     </main>
          <?php include "layout/footer.html" ?>
-</body>
+</div>
+        </body>
 </html>

@@ -5,32 +5,36 @@ session_start();
 
 $register_message = "";
 
-if(isset($_SESSION["is_login"])){
+if (isset($_SESSION["is_login"])) {
     header("location: dashboard.php");
+    exit();
 }
 
-if(isset($_POST['register'])) {
+if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $hash_password = hash('sha256', $password);
 
     try {
+        $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $hash_password);
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hash_password')";
+        if ($stmt->execute()) {
+            $register_message = "Daftar akun berhasil, silahkan login!";
+        } else {
+            $register_message = "Daftar akun gagal, silahkan coba lagi!";
+        }
 
-    if($db->query($sql)){
-        $register_message = "daftar akun berhasil, silahkan login!";
+        $stmt->close();
 
-    }else {
-        $register_message = "daftar akun gagal, silahkan coba lagi!";
+    } catch (mysqli_sql_exception $e) {
+        $register_message = "Username sudah digunakan: " . $e->getMessage();
     }
-    }catch (mysqli_sql_exception){
-        $register_message = "username sudah digunakan";
-    }
+
     $db->close();
-
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +44,7 @@ if(isset($_POST['register'])) {
     <title>Document</title>
 </head>
 <body>
+    <div class="login-container">
         <?php include "layout/header.html" ?>
     <h3>daftar</h3>
     <i><?= $register_message ?></i>
@@ -50,5 +55,6 @@ if(isset($_POST['register'])) {
     </form>
 
              <?php include "layout/footer.html" ?>
-</body>
+</div>
+            </body>
 </html>

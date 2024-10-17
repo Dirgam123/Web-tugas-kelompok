@@ -33,12 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="profile-info">
         <h2><?= $_SESSION["username"] ?></h2>
     </div>
+
         <form action="dashboard.php" method="POST">
         <button type="submit" name="logout">logout</button>
     </form>
+</div>
 
 </div>
-</div>
+
 
 </body>
 </html>
