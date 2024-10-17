@@ -75,15 +75,11 @@ $db->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Page</title>
-    <style>
-        .post-container { margin-bottom: 40px; border: 1px solid #ccc; padding: 20px; }
-        .comment-container { margin-left: 20px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
-        .comment { margin-bottom: 10px; }
-        .new-post-form, .new-comment-form { margin-bottom: 20px; }
-    </style>
+<link rel="stylesheet" href="style/com.css">
+
 </head>
 <body>
-
+        <?php include "layout/headerlogin.html" ?>
 <div class="new-post-form">
     <h2>Create a New Post</h2>
     <form action="community.php" method="POST">

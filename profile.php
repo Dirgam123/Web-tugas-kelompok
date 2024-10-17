@@ -31,12 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="defaultprofile.jpg" alt="defaultprofile.jpg">
     </div>
     <div class="profile-info">
-        <h2><?= $_SESSION["username"] ?></h2>
+        <h3>Halo, <?= $_SESSION["username"] ?></h3>
     </div>
 
-        <form action="dashboard.php" method="POST">
-        <button type="submit" name="logout">logout</button>
-    </form>
+
 </div>
 
 </div>
